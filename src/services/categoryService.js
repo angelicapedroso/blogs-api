@@ -11,4 +11,11 @@ const create = async (name) => {
   return { status: 201, result: category };
 };
 
-module.exports = { create };
+const getAll = async () => {
+  const users = await Category.findAll({
+    attributes: { exclude: ['password'] },
+  });
+  return users;
+};
+
+module.exports = { create, getAll };

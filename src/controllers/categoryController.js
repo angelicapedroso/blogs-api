@@ -7,4 +7,9 @@ const create = async (req, res) => {
     return res.status(status).json(result);
 };
 
-module.exports = { create };
+const getAll = async (_req, res) => {
+    const result = await categoryService.getAll();
+    return res.status(200).json(result);
+};
+
+module.exports = { create, getAll };

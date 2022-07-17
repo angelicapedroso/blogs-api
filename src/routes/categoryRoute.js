@@ -6,4 +6,6 @@ const router = Router();
 
 router.post('/', tokenValidate, categoryController.create);
 
+router.get('/', tokenValidate, categoryController.getAll);
+
 module.exports = router;
