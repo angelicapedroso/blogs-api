@@ -19,7 +19,7 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
-  const post = await User.findOne({ where: { id } }, postQuery);
+  const post = await BlogPost.findByPk(id, postQuery);
   if (!post) return { status: 404, result: { message: 'Post does not exist' } };
   return { status: 200, result: post };
 };
